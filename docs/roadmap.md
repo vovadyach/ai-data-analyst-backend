@@ -3,7 +3,7 @@
 ## MVP (Current)
 - [x] Project setup + folder structure
 - [x] API versioning (v1/v2)
-- [ ] Docker + PostgreSQL
+- [x] Docker + PostgreSQL
 - [ ] Database connection + config
 - [ ] User model + Auth (register/login/JWT)
 - [ ] File upload (CSV/Excel)
