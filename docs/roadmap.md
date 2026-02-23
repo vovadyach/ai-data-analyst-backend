@@ -12,7 +12,7 @@
 - [ ] Charts/dashboards
 - [ ] Admin panel
 - [ ] CI/CD (GitHub Actions)
-- [ ] Deploy (Railway + Vercel)
+- [ ] Deploy (AWS/Railway + Vercel)
 
 ## Improvements (Future)
 - [ ] Rate limiting
