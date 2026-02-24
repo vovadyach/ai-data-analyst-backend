@@ -6,10 +6,10 @@
 - [x] Docker + PostgreSQL
 - [x] Database connection + config
 - [ ] User model + Auth (register/login/JWT)
-- [ ] Forgot password
 - [ ] Refresh tokens + logout/session management
-- [ ] Email verification
 - [ ] Email notifications (Resend, Brevo)
+- [ ] Email verification
+- [ ] Forgot password
 - [ ] File upload (CSV/Excel)
 - [ ] AI chat (Gemini integration)
 - [ ] Streaming AI responses (WebSocket)

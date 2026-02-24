@@ -23,17 +23,13 @@ class Base(DeclarativeBase):
     """Base class for all models. Adds id, created_at and updated_at."""
 
     id: Mapped[uuid_lib.UUID] = mapped_column(
-        primary_key=True,
-        default=uuid7,
+        primary_key=True, default=uuid7, sort_order=-3
     )
     created_at: Mapped[datetime] = mapped_column(
-        server_default=func.now(),
-        nullable=False,
+        server_default=func.now(), nullable=False, sort_order=-2
     )
     updated_at: Mapped[datetime] = mapped_column(
-        server_default=func.now(),
-        onupdate=func.now(),
-        nullable=False,
+        server_default=func.now(), onupdate=func.now(), nullable=False, sort_order=-1
     )
 
 

@@ -5,6 +5,7 @@ from sqlalchemy import text
 from sqlalchemy.ext.asyncio import AsyncSession
 from starlette.middleware.cors import CORSMiddleware
 
+from app.api.v1.router import api_router
 from app.core.config import settings
 from app.core.database import engine, get_db
 
@@ -18,6 +19,8 @@ async def lifespan(app: FastAPI):
 
 
 app = FastAPI(title="AI Data Analyst API", lifespan=lifespan)
+
+app.include_router(api_router, prefix=settings.API_V1_PREFIX)
 
 app.add_middleware(
     CORSMiddleware,

@@ -16,10 +16,14 @@ class Settings(BaseSettings):
     # CORS (frontend URL)
     CORS_ORIGINS: list[str] = ["http://localhost:3000"]
 
+    # Auth
+    JWT_SECRET: str = "change-me-in-production"
+    JWT_ALGORITHM: str = "HS256"
+    JWT_EXPIRATION_MINUTES: int = 30
+    JWT_REFRESH_EXPIRATION_DAYS: int = 7
+
     # Future
     # GEMINI_API_KEY: str
-    # JWT_SECRET: str
-    # JWT_EXPIRATION_MINUTES: int = 30
 
     class Config:
         env_file = ".env"
