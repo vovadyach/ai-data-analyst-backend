@@ -6,6 +6,10 @@
 - [x] Docker + PostgreSQL
 - [x] Database connection + config
 - [ ] User model + Auth (register/login/JWT)
+- [ ] Forgot password
+- [ ] Refresh tokens + logout/session management
+- [ ] Email verification
+- [ ] Email notifications (Resend, Brevo)
 - [ ] File upload (CSV/Excel)
 - [ ] AI chat (Gemini integration)
 - [ ] Streaming AI responses (WebSocket)
@@ -19,7 +23,6 @@
 - [ ] File size validation
 - [ ] Redis caching for AI responses
 - [ ] Background jobs (Celery) for large file processing
-- [ ] Email notifications (Resend)
 - [ ] OAuth (Google/GitHub login)
 - [ ] Export dashboard as PDF
 
