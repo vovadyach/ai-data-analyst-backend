@@ -1,5 +1,5 @@
-import uuid as uuid_lib
 from datetime import datetime
+import uuid as uuid_lib
 
 from sqlalchemy import func
 from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker, create_async_engine
