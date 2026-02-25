@@ -14,5 +14,6 @@ class UserResponse(BaseModel):
     updated_at: datetime
     is_admin: bool
     avatar_url: str | None = None
+    is_verified: bool
 
     model_config = {"from_attributes": True}
