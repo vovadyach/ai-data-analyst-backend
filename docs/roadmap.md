@@ -5,8 +5,8 @@
 - [x] API versioning (v1/v2)
 - [x] Docker + PostgreSQL
 - [x] Database connection + config
-- [ ] User model + Auth (register/login/JWT)
-- [ ] Refresh tokens + logout/session management
+- [x] User model + Auth (register/login/JWT)
+- [x] Refresh tokens + logout/session management
 - [ ] Email notifications (Resend, Brevo)
 - [ ] Email verification
 - [ ] Forgot password

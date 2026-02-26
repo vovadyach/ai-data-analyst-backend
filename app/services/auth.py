@@ -63,6 +63,7 @@ async def create_tokens(db: AsyncSession, user: User) -> TokenResponse:
         user_id=user.id,
         expires_at=datetime.fromtimestamp(payload[TOKEN_EXP_KEY], tz=timezone.utc),
     )
+    print("v:db_token db_token", db_token)
     db.add(db_token)
     await db.flush()
 

@@ -1,7 +1,7 @@
 from datetime import datetime
 import uuid as uuid_lib
 
-from sqlalchemy import Boolean, ForeignKey, String
+from sqlalchemy import Boolean, DateTime, ForeignKey, String
 from sqlalchemy.orm import Mapped, mapped_column
 
 from app.core.database import Base
@@ -16,5 +16,7 @@ class RefreshToken(Base):
     user_id: Mapped[uuid_lib.UUID] = mapped_column(
         ForeignKey("users.id", ondelete="CASCADE"), nullable=False
     )
-    expires_at: Mapped[datetime] = mapped_column(nullable=False)
+    expires_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), nullable=False
+    )
     is_revoked: Mapped[bool] = mapped_column(Boolean, default=False)

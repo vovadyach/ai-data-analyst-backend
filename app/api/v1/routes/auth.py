@@ -4,10 +4,6 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.api.v1.dependencies import get_current_user
 from app.core.database import get_db
-from app.core.security import (
-    create_access_token,
-    create_refresh_token,
-)
 from app.models.user import User
 from app.schemas.auth import LoginRequest, RegisterRequest, TokenResponse
 from app.schemas.user import UserResponse
@@ -15,6 +11,7 @@ from app.services.auth import (
     EmailAlreadyExistsError,
     InvalidRefreshTokenError,
     authenticate_user,
+    create_tokens,
     logout_all,
     logout_user,
     refresh_token,
@@ -53,10 +50,7 @@ async def login(
             headers={"WWW-Authenticate": "Bearer"},
         )
 
-    return TokenResponse(
-        access_token=create_access_token(str(user.id)),
-        refresh_token=create_refresh_token(str(user.id)),
-    )
+    return await create_tokens(db, user)
 
 
 @router.post("/refresh", response_model=TokenResponse)

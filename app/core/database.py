@@ -1,7 +1,7 @@
 from datetime import datetime
 import uuid as uuid_lib
 
-from sqlalchemy import func
+from sqlalchemy import DateTime, func
 from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker, create_async_engine
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
 from uuid6 import uuid7
@@ -26,10 +26,17 @@ class Base(DeclarativeBase):
         primary_key=True, default=uuid7, sort_order=-3
     )
     created_at: Mapped[datetime] = mapped_column(
-        server_default=func.now(), nullable=False, sort_order=-2
+        DateTime(timezone=True),
+        server_default=func.now(),
+        nullable=False,
+        sort_order=-2,
     )
     updated_at: Mapped[datetime] = mapped_column(
-        server_default=func.now(), onupdate=func.now(), nullable=False, sort_order=-1
+        DateTime(timezone=True),
+        server_default=func.now(),
+        onupdate=func.now(),
+        nullable=False,
+        sort_order=-1,
     )
 
 
